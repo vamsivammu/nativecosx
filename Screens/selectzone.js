@@ -11,9 +11,9 @@ export default class SelectZone extends React.Component{
         // this.selectzone= this.selectzone.bind(this)
     }
 
-    selectzone(zone){
+    selectzone(zone,route){
         alert(zone)
-        this.props.navigation.navigate('UpdateProfile')
+        this.props.navigation.navigate(route)
         
     }
 
@@ -51,19 +51,19 @@ let styles = StyleSheet.create({
         return(
                 <View style={styles.container}>
 
-                    <View onTouchEnd={()=>this.selectzone('Employer')} style={styles.boxContainer}>
+                    <View onTouchEnd={()=>this.selectzone('Employer','UpdateProfileEmp')} style={styles.boxContainer}>
                         <Text style={styles.textContainer}>
                             EMPLOYER ZONE
                         </Text>
                     </View>
 
-                    <View onTouchEnd={()=>this.selectzone('Candidate')} style={styles.boxContainer}>
+                    <View onTouchEnd={()=>this.selectzone('Candidate','UpdateProfile')} style={styles.boxContainer}>
                     <Text style={styles.textContainer}>
                             CANDIDATE ZONE
                         </Text>
                     </View >
 
-                    <View onTouchEnd={()=>this.selectzone('Institution')} style={styles.boxContainer}>
+                    <View onTouchEnd={()=>this.selectzone('Institution','UpdateProfileInst')} style={styles.boxContainer}>
 
                     <Text style={styles.textContainer}>
                             INSTITUTION ZONE
@@ -71,7 +71,7 @@ let styles = StyleSheet.create({
 
                     </View>
                     
-                    <View onTouchEnd={()=>this.selectzone('Freelancer')} style={styles.boxContainer}>
+                    <View onTouchEnd={()=>this.selectzone('Freelancer','UpdateProfileFree')} style={styles.boxContainer}>
 
                     <Text style={styles.textContainer}>
                              EXPLORE FREELANCERS 

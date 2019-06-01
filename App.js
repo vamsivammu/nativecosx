@@ -13,6 +13,7 @@ import HomeScreen from './Screens/homescreen'
 import SignInScreen from './Screens/signin'
 import SelectZone from './Screens/selectzone'
 import UpdateProfile from './Screens/updateprofile'
+import UpdateProfileEmp from './Screens/updateprofileemp'
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
   android:
@@ -25,6 +26,7 @@ const AppNavigator = createStackNavigator({
 SignIn:SignInScreen,
 Zone:SelectZone,
 UpdateProfile:UpdateProfile,
+UpdateProfileEmp:UpdateProfileEmp,
     initialRouteName:'UpdateProfile'
   
 })
