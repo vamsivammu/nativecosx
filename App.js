@@ -8,7 +8,7 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
-import {StackActions,createStackNavigator,createAppContainer} from 'react-navigation'
+import {StackActions,createStackNavigator,createAppContainer,createDrawerNavigator} from 'react-navigation'
 import HomeScreen from './Screens/homescreen'
 import SignInScreen from './Screens/signin'
 import SelectZone from './Screens/selectzone'
@@ -21,7 +21,7 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-const AppNavigator = createStackNavigator({
+const DrawNavigator = createDrawerNavigator({
   Signup:HomeScreen,
 SignIn:SignInScreen,
 Zone:SelectZone,
@@ -31,13 +31,27 @@ UpdateProfileEmp:UpdateProfileEmp,
   
 })
 
-const AppContainer  = createAppContainer(AppNavigator)
+const AppNavigator = createStackNavigator({
+  Signup:HomeScreen,
+  SignIn:SignInScreen,
+  Zone:SelectZone,
+  UpdateProfile:UpdateProfile,
+  UpdateProfileEmp:UpdateProfileEmp,
+      initialRouteName:'UpdateProfile'
+})
+
+const AppContainer  = createAppContainer(DrawNavigator)
 // type Props = {};
 export default class App extends Component {
+ 
   constructor(props){
     super(props)
   }
   render() {
-    return <AppContainer />;
+    let navigationopts = {
+      title:"Home",
+      headerRight:(<Text>GIGX</Text>)
+  }
+    return <AppContainer navigationOptions={navigationopts}  />;
   }
 }

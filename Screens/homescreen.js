@@ -4,7 +4,8 @@ import {Container,Header,Left,Right,Body,Title, Content,H1, H3, Item, Label, Inp
 export default class HomeScreen extends React.Component{
     static navigationOptions = {
         title:"Home",
-        headerRight:(<Text>GIGX</Text>)
+        headerRight:(<Text>GIGX</Text>),
+        headerLeft:(<Text onPress={()=>this.props.navigation.openDrawer()}>Menu</Text>)
     }
     constructor(props){
         super(props)
